@@ -8,7 +8,7 @@ let lastOrderCount = 0; // Simpan jumlah pesanan terakhir untuk cek pesanan baru
 
 async function loadOrders() {
     try {
-        const response = await fetch('http://localhost:5001/orders');
+        const response = await fetch('https://backend2-jade.vercel.app/orders');
         const orders = await response.json();
 
         // Urutkan data agar pesanan terbaru ada di paling atas
