@@ -1,0 +1,393 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #802719, #7c3025);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #ddd;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin: 10px 0 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Price List */
+.price-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.price-item {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.price-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.price-item h3 {
+    font-size: 1.5rem;
+    color: #802719;
+    margin: 0 0 10px;
+}
+
+.price-item .description {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.price-item .price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+}
+
+.price-item button {
+    background: #802719;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.price-item button:hover {
+    background: #a83321;
+}
+
+/* 📝 Order Form */
+.order-form {
+    background: white;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.order-form h2 {
+    text-align: center;
+    color: #802719;
+}
+
+.order-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.order-form input,
+.order-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.order-form button {
+    background: #802719;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.order-form button:hover {
+    background: #a83321;
+}
+
+.order-form p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* 🛠 Dashboard Admin */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #802719;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #802719;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* 🖥 Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .price-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .price-item {
+        padding: 15px;
+    }
+
+    .order-form {
+        width: 90%;
+    }
+
+    table {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}
+
+/* Modal Form */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: #802719;
+}
+
+.modal-content label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 7px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background: #802719;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.modal-content button:hover {
+    background: #a83321;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.close:hover {
+    color: #333;
+}
+/* Gaya untuk gambar dalam price item */
+.price-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.time-grid {
+    display: grid;
+
+    flex-wrap: wrap;
+    gap: 20px;
+    max-height: 100px; /* Batasi tinggi maksimal */
+    overflow-y: auto;  /* Tambahkan scroll jika penuh */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.time-button {
+    width: 50px;
+    height: 50px;
+    background: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.time-button:hover {
+    background: #ddd;
+}
+
+.time-button.selected {
+    background: #007bff;
+    color: white;
+    border: 2px solid #0056b3;
+}
+
+/* 🛠 Dashboard Admin */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #802719;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #802719;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+button {
+    background: #802719;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #a83321;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

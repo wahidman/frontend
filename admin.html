@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero">
+        <h1>Admin Dashboard</h1>
+        <p>Kelola Pesanan Masuk</p>
+    </div>
+
+    <div class="container">
+        <h2>Daftar Pesanan</h2>
+        <input type="text" id="searchInput" placeholder="Cari pesanan..." onkeyup="searchOrders()" class="search-box">
+        
+        <table id="ordersTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Nama</th>
+                    <th>WhatsApp</th>
+                    <th onclick="sortTable(2)">Lokasi</th>
+                    <th onclick="sortTable(3)">Tanggal</th>
+                    <th onclick="sortTable(4)">Waktu</th>
+                    <th onclick="sortTable(5)">Paket</th>
+                    <th onclick="sortTable(6)">DP</th>
+                    <th onclick="sortTable(7)">Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data pesanan akan dimuat di sini -->
+            </tbody>
+        </table>
+    </div>
+    
+
+    <script src="admin.js"></script>
+</body>
+</html>

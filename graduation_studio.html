@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price List Self Photo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero">
+        <h1>Dinema Studio</h1>
+        <p>Capture Your Best Moments</p>
+    </div>
+
+    <div class="container">
+        <h2>Pilih Paket Foto Graduation Studio</h2>
+        <div class="price-list">
+            <div class="price-item">
+                <h3>Paket Basic</h3>
+                <p class="description">1 client photo only, maksimal 5 orang, 1 Background, 1 Kostum, 5 Pose, 3 foto edit, 5-8 shot photo, All soft copy files </p>
+                <p class="price">Rp 390.000</p>
+                <button onclick="openOrderForm('Paket Basic', 390000)">Pilih Paket</button>
+            </div>
+            <div class="price-item popular">
+                <span class="popular-badge">Paling Laris!</span>
+                <h3>Edge</h3>
+                <p class="description">1 client photo only, maksimal 5 orang, 1 Background, 1 Kostum, 7 Pose, 5-8 foto edit, 1 cetak 8rj+frame, 8-15 shot photo, All soft copy files</p>
+                <p class="price">Rp 450.000</p>
+                <button onclick="openOrderForm('Paket Standard', 450000)">Pilih Paket</button>
+            </div>
+            <div class="price-item">
+                <h3>Deluxe</h3>
+                <p class="description">1 client photo only, maksimal 5 orang, 2 Background, 2 Kostum, 10 Pose, 10 foto edit, 1 cetak 8rj+frame, 1 ceetak 10rj+frame, 15-20 shot photo, All soft copy files</p>
+                <p class="price">Rp 850.000</p>
+                <button onclick="openOrderForm('Paket Premium', 850000)">Pilih Paket</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Form Pemesanan -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderForm()">&times;</span>
+            <h2>Form Pemesanan</h2>
+            <p id="selectedPackage"></p>
+            <form id="bookingForm">
+                <label for="name">Nama Lengkap:</label>
+                <input type="text" id="name" required>
+
+                <label for="whatsapp">Nomor WhatsApp:</label>
+                <input type="tel" id="whatsapp" required>
+
+                <label for="location">Lokasi Pemotretan:</label>
+                <input type="text" id="location" value="Studio Dinema" readonly required>
+
+                <label for="date">Pilih Tanggal:</label>
+                <input type="date" id="date" required>
+                
+                <label for="time">Pilih Waktu:</label>
+                <div id="timeContainer" class="time-grid"></div>
+                <input type="hidden" id="selectedTime" required>
+                <p><strong>DP yang harus dibayar:</strong> <span id="dpAmount">Rp 0</span></p>
+
+                <button type="botton" id="bookingForm">Pesan Sekarang</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-2pSBEl5ZoVr6ZBsr"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
