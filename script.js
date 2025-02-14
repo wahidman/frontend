@@ -97,7 +97,7 @@ document.getElementById('bookingForm').addEventListener('submit', async function
     };
 
     try {
-        let response = await fetch('http://localhost:5001/create-order', {
+        let response = await fetch('https://backend2-jade.vercel.app/create-order', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderData)
@@ -119,7 +119,7 @@ document.getElementById('bookingForm').addEventListener('submit', async function
 // Fungsi untuk memproses pembayaran dengan Midtrans
 async function proceedToPayment(orderId, dpAmount) {
     try {
-        let response = await fetch('http://localhost:5001/create-transaction', {
+        let response = await fetch('https://backend2-jade.vercel.app/create-transaction', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ order_id: orderId, amount: dpAmount })
