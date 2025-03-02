@@ -63,7 +63,7 @@ function searchOrders() {
 // Fungsi kirim notifikasi ke admin
 async function notifyAdmin(order) {
     try {
-        await fetch("https://smiling-respected-recess.glitch.me/send-admin", {
+        await fetch("https://whatsapp-bot-brown-kappa.vercel.app/send-admin", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(order),
