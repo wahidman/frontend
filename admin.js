@@ -10,27 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     connectWebSocket();
 });
 
-function connectWebSocket() {
-    const socket = new WebSocket('https://pear-waiting-line.glitch.me'); // Ganti dengan URL Glitch kamu
-
-    socket.onopen = () => {
-        console.log("🔗 WebSocket Terhubung");
-    };
-
-    socket.onmessage = (event) => {
-        console.log("📩 Pesanan baru diterima:", event.data);
-        updateOrders(JSON.parse(event.data));
-    };
-
-    socket.onerror = (error) => {
-        console.error("❌ WebSocket Error:", error);
-    };
-
-    socket.onclose = () => {
-        console.log("⚠️ WebSocket Ditutup, mencoba reconnect...");
-        setTimeout(connectWebSocket, 5000); // Coba reconnect setelah 5 detik
-    };
-}
 
 async function loadOrders() {
     try {
@@ -73,6 +52,29 @@ async function loadOrders() {
         console.error('Error loading orders:', error);
     }
 }
+
+function connectWebSocket() {
+    const socket = new WebSocket('https://pear-waiting-line.glitch.me'); // Ganti dengan URL Glitch kamu
+
+    socket.onopen = () => {
+        console.log("🔗 WebSocket Terhubung");
+    };
+
+    socket.onmessage = (event) => {
+        console.log("📩 Pesanan baru diterima:", event.data);
+        updateOrders(JSON.parse(event.data));
+    };
+
+    socket.onerror = (error) => {
+        console.error("❌ WebSocket Error:", error);
+    };
+
+    socket.onclose = () => {
+        console.log("⚠️ WebSocket Ditutup, mencoba reconnect...");
+        setTimeout(connectWebSocket, 5000); // Coba reconnect setelah 5 detik
+    };
+}
+
 
 function searchOrders() {
     const input = document.getElementById("searchInput").value.toLowerCase();
