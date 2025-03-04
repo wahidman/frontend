@@ -6,6 +6,32 @@ const ADMIN_WHATSAPP = '+6282251892599'; // Ganti dengan nomor WhatsApp admin
 
 let lastOrderCount = 0; // Simpan jumlah pesanan terakhir untuk cek pesanan baru
 
+document.addEventListener('DOMContentLoaded', function () {
+    connectWebSocket();
+});
+
+function connectWebSocket() {
+    const socket = new WebSocket('wss://your-glitch-project.glitch.me'); // Ganti dengan URL Glitch kamu
+
+    socket.onopen = () => {
+        console.log("🔗 WebSocket Terhubung");
+    };
+
+    socket.onmessage = (event) => {
+        console.log("📩 Pesanan baru diterima:", event.data);
+        updateOrders(JSON.parse(event.data));
+    };
+
+    socket.onerror = (error) => {
+        console.error("❌ WebSocket Error:", error);
+    };
+
+    socket.onclose = () => {
+        console.log("⚠️ WebSocket Ditutup, mencoba reconnect...");
+        setTimeout(connectWebSocket, 5000); // Coba reconnect setelah 5 detik
+    };
+}
+
 async function loadOrders() {
     try {
         const response = await fetch('https://backend2-jade.vercel.app/orders');
