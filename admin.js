@@ -62,7 +62,7 @@ function connectWebSocket() {
 
     socket.onmessage = (event) => {
         console.log("📩 Pesanan baru diterima:", event.data);
-        updateOrders(JSON.parse(event.data));
+        loadOrders(JSON.parse(event.data));
     };
 
     socket.onerror = (error) => {
