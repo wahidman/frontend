@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function connectWebSocket() {
-    const socket = new WebSocket('wss://your-glitch-project.glitch.me'); // Ganti dengan URL Glitch kamu
+    const socket = new WebSocket('https://pear-waiting-line.glitch.me'); // Ganti dengan URL Glitch kamu
 
     socket.onopen = () => {
         console.log("🔗 WebSocket Terhubung");
